@@ -6,22 +6,22 @@
 :root {
   /* HSL Color Palette - GOOBA Organic Sustainability Elegant Light Theme */
   --bg-primary: hsl(35, 20%, 96%);     /* Elegant Warm Off-white / Cream Alabaster */
-  --bg-secondary: hsl(35, 15%, 93%);   /* Slightly deeper warm off-white */
+  --bg-secondary: hsl(35, 15%, 91%);   /* Slightly deeper warm off-white */
   --bg-card: rgba(255, 255, 255, 0.65);
   --bg-nav: rgba(247, 245, 241, 0.85);
   
-  --primary: hsl(145, 50%, 25%);       /* Sage/Forest Green */
-  --primary-rgb: 20, 80, 50;
-  --accent: hsl(35, 65%, 40%);        /* Bronze / Golden Amber */
-  --accent-rgb: 168, 107, 26;
-  --success: hsl(145, 63%, 39%);
+  --primary: hsl(145, 45%, 24%);       /* Sage/Forest Green */
+  --primary-rgb: 33, 80, 53;
+  --accent: hsl(30, 45%, 38%);        /* Terra Cotta / Earthy Brown */
+  --accent-rgb: 140, 84, 40;
+  --success: hsl(145, 45%, 24%);
   
-  --text-primary: hsl(210, 24%, 12%);
-  --text-secondary: hsl(210, 16%, 32%);
-  --text-muted: hsl(210, 10%, 55%);
+  --text-primary: hsl(25, 40%, 15%);   /* Deep Chocolate Brown */
+  --text-secondary: hsl(25, 25%, 32%); /* Soft Earthy Brown */
+  --text-muted: hsl(25, 15%, 52%);     /* Warm Muted Brown */
   
-  --border-light: rgba(20, 80, 50, 0.1);
-  --border-muted: rgba(0, 0, 0, 0.06);
+  --border-light: rgba(33, 80, 53, 0.12);
+  --border-muted: rgba(140, 84, 40, 0.08);
   
   /* Typography */
   --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -88,7 +88,7 @@ img {
   background: var(--bg-secondary);
 }
 ::-webkit-scrollbar-thumb {
-  background: hsl(222, 47%, 20%);
+  background: hsla(25, 25%, 32%, 0.2);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -181,9 +181,9 @@ img {
 }
 
 .btn-primary {
-  background: hsl(210, 24%, 16%);
-  color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  background: var(--primary);
+  color: var(--bg-primary);
+  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.15);
 }
 
 .btn-primary::before {
@@ -193,7 +193,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: hsl(210, 24%, 24%);
+  background: var(--accent); /* Earthy brown shift on hover */
   opacity: 0;
   transition: var(--transition-smooth);
   z-index: -1;
@@ -204,20 +204,20 @@ img {
 }
 
 .btn-primary:hover {
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 18px rgba(var(--accent-rgb), 0.25);
   transform: translateY(-2px);
 }
 
 .btn-secondary {
   background: transparent;
   color: var(--text-primary);
-  border: 1.5px solid rgba(0, 0, 0, 0.1);
+  border: 1.5px solid var(--border-light);
 }
 
 .btn-secondary:hover {
-  background: rgba(0, 0, 0, 0.02);
-  border-color: rgba(0, 0, 0, 0.25);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  background: rgba(var(--primary-rgb), 0.04);
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.05);
   transform: translateY(-2px);
 }
 
@@ -468,7 +468,7 @@ img {
   align-items: center;
   gap: 1rem;
   padding: 1rem 2.5rem;
-  background: hsla(222, 47%, 12%, 0.5);
+  background: rgba(255, 255, 255, 0.5);
   border: 1px solid var(--border-muted);
   border-radius: 50px;
 }
@@ -1078,7 +1078,7 @@ textarea.form-control {
 .modal-overlay {
   position: fixed;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(4, 6, 12, 0.8);
+  background: rgba(61, 38, 26, 0.4);
   backdrop-filter: blur(8px);
   z-index: 2000;
   display: flex;
@@ -1231,7 +1231,7 @@ textarea.form-control {
 .newsletter-form {
   display: flex;
   gap: 0.5rem;
-  background: hsla(222, 47%, 12%, 0.5);
+  background: rgba(255, 255, 255, 0.5);
   border: 1px solid var(--border-muted);
   border-radius: 50px;
   padding: 0.25rem 0.25rem 0.25rem 1rem;
@@ -1268,7 +1268,7 @@ textarea.form-control {
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background: hsla(222, 47%, 12%, 0.5);
+  background: rgba(255, 255, 255, 0.5);
   border: 1px solid var(--border-muted);
   display: flex;
   align-items: center;
