@@ -473,29 +473,22 @@ img {
 
 .about-graphic {
   position: relative;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-}
-
-.about-graphic::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: linear-gradient(135deg, hsla(148, 50%, 18%, 0.15) 0%, transparent 60%);
-  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about-graphic img {
   width: 100%;
+  max-width: 480px;
   height: auto;
   display: block;
-  border-radius: 24px;
   transition: var(--transition-smooth);
+  filter: drop-shadow(0 10px 30px rgba(16, 185, 129, 0.08));
 }
 
 .about-graphic:hover img {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .about-content {
