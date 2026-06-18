@@ -307,6 +307,10 @@ img {
   gap: 1.5rem;
 }
 
+.nav-cta-mobile {
+  display: none !important;
+}
+
 /* Mobile Burger Menu Button */
 .burger-menu {
   display: none;
@@ -1369,6 +1373,9 @@ textarea.form-control {
   }
   .nav-cta {
     display: none; /* In burger menu on mobile */
+  }
+  .nav-cta-mobile {
+    display: inline-flex !important;
   }
   .hero-title {
     font-size: 2.8rem;
