@@ -1273,7 +1273,7 @@ textarea.form-control {
   .hero-title {
     font-size: 3.5rem;
   }
-  .hero-grid, .about-grid, .contact-grid, .footer-grid {
+  .hero-grid, .about-grid, .contact-grid, .footer-grid, .about-values-grid {
     grid-template-columns: 1fr;
     gap: 3.5rem;
   }
