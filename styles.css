@@ -384,7 +384,8 @@ img {
   max-width: 600px;
 }
 
-.hero-meta {
+.hero-meta,
+.about-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem 3rem;
