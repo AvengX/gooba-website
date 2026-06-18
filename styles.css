@@ -805,6 +805,59 @@ img {
   color: var(--text-secondary);
 }
 
+@media (min-width: 1025px) {
+  .timeline {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 1.5rem;
+  }
+
+  .timeline::after {
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 50%, var(--bg-primary) 100%);
+    top: 30px;
+    left: 0;
+    margin-left: 0;
+    bottom: auto;
+  }
+
+  .timeline-item {
+    flex: 1;
+    padding: 0;
+    width: auto;
+    left: auto !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline-item:nth-child(even) {
+    left: auto !important;
+  }
+
+  .timeline-dot {
+    top: 22px;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%);
+  }
+
+  .timeline-item:nth-child(odd) .timeline-dot {
+    right: auto !important;
+    left: 50% !important;
+  }
+
+  .timeline-content {
+    margin-top: 4.5rem;
+    padding: 1.5rem;
+    width: 100%;
+    text-align: center;
+  }
+}
+
 /* ==========================================================================
    SPONSORS SECTION (INFINITE MARQUEE)
    ========================================================================== */
