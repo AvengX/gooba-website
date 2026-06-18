@@ -440,9 +440,13 @@ img {
   align-items: center;
 }
 
+.hero-graphic img,
 .hero-graphic svg {
   width: 100%;
   max-width: 420px;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
   filter: drop-shadow(0 10px 30px rgba(16, 185, 129, 0.15));
   animation: float 6s ease-in-out infinite;
 }
@@ -1279,8 +1283,10 @@ textarea.form-control {
   .hero-graphic {
     grid-row: 1;
   }
+  .hero-graphic img,
   .hero-graphic svg {
     max-width: 320px;
+    max-height: 50vh;
   }
   .activities-grid, .speakers-grid, .advisory-grid {
     grid-template-columns: repeat(2, 1fr);
