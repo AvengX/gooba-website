@@ -25,7 +25,7 @@
   <meta property="twitter:image" content="assets/mascot.svg" />
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles.css?v=1.1.8">
+  <link rel="stylesheet" href="styles.css?v=1.1.9">
   
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -481,6 +481,38 @@
             <div class="contact-details">
               <h3>Call Trade Desk</h3>
               <p>+91 99101 90669<br>+91 98670 50083</p>
+            </div>
+          </div>
+
+          <!-- WhatsApp Chatbot Widget -->
+          <div class="whatsapp-bot-card glass-panel">
+            <div class="bot-header">
+              <div class="bot-avatar-wrapper">
+                <img src="assets/logo.svg" alt="GOOBA Logo">
+                <span class="online-indicator"></span>
+              </div>
+              <div class="bot-header-info">
+                <h4>GOOBA Support Bot</h4>
+                <p>Online | Direct Export Desk</p>
+              </div>
+              <div class="bot-header-icon">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+            </div>
+            <div class="bot-chat-body" id="bot-chat-body">
+              <div class="chat-message bot-msg">
+                <p>Hello! Welcome to GOOBA EXPORT LLP. 🌿 How can we help you today?</p>
+              </div>
+            </div>
+            <div class="bot-options" id="bot-options">
+              <button class="bot-opt-btn" onclick="triggerBotOption('catalog', '📥 Download Product Catalog')">📥 Download Catalog</button>
+              <button class="bot-opt-btn" onclick="triggerBotOption('quote', '📦 Get Bulk Price List')">📦 Get Bulk Price List</button>
+              <button class="bot-opt-btn" onclick="triggerBotOption('expert', '💬 Talk to Export Expert')">💬 Talk to Export Expert</button>
+            </div>
+            <div class="bot-footer">
+              <a href="https://wa.me/919910190669?text=Hello%2C%20I%20am%20interested%20in%20GOOBA%20products." target="_blank" class="btn-whatsapp-direct">
+                <i class="fa-brands fa-whatsapp" style="margin-right: 8px; font-size: 1.2rem;"></i> Open WhatsApp Chat
+              </a>
             </div>
           </div>
         </div>

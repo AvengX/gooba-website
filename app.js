@@ -328,3 +328,59 @@ function validateEmail(email) {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 }
+
+/* ==========================================================================
+   WHATSAPP MOCK CHATBOT LOGIC
+   ========================================================================== */
+function triggerBotOption(type, labelText) {
+  const chatBody = document.getElementById('bot-chat-body');
+  const optionsDiv = document.getElementById('bot-options');
+  if (!chatBody || !optionsDiv) return;
+
+  // Disable options during typing
+  optionsDiv.style.pointerEvents = 'none';
+  optionsDiv.style.opacity = '0.5';
+
+  // 1. Add user message
+  const userMsg = document.createElement('div');
+  userMsg.className = 'chat-message user-msg';
+  userMsg.innerHTML = `<p>${labelText}</p>`;
+  chatBody.appendChild(userMsg);
+  chatBody.scrollTop = chatBody.scrollHeight;
+
+  // 2. Add typing indicator
+  setTimeout(() => {
+    const typingIndicator = document.createElement('div');
+    typingIndicator.className = 'chat-message typing-indicator';
+    typingIndicator.id = 'bot-typing';
+    typingIndicator.innerHTML = '<p>GOOBA Support is typing...</p>';
+    chatBody.appendChild(typingIndicator);
+    chatBody.scrollTop = chatBody.scrollHeight;
+
+    // 3. Add bot reply after delay
+    setTimeout(() => {
+      // Remove typing indicator
+      const typing = document.getElementById('bot-typing');
+      if (typing) typing.remove();
+
+      let replyText = '';
+      if (type === 'catalog') {
+        replyText = "Sure! You can download our latest Product Catalog PDF here: <a href='#portfolio' style='text-decoration:underline; font-weight:600; color:var(--primary);'>GOOBA-Catalog.pdf</a> or click the button below to connect with our WhatsApp support to receive the catalog directly on your phone! 📦";
+      } else if (type === 'quote') {
+        replyText = "Our bulk FOB price list depends on your required quantities and destination port. 🚢 Click the button below to connect directly with our export desk on WhatsApp to get an instant pricing quote!";
+      } else if (type === 'expert') {
+        replyText = "An export trade manager is available now. Click the button below to start a live chat on WhatsApp for private label OEM or container shipping queries! 💬";
+      }
+
+      const botReply = document.createElement('div');
+      botReply.className = 'chat-message bot-msg';
+      botReply.innerHTML = `<p>${replyText}</p>`;
+      chatBody.appendChild(botReply);
+      chatBody.scrollTop = chatBody.scrollHeight;
+
+      // Re-enable options
+      optionsDiv.style.pointerEvents = '';
+      optionsDiv.style.opacity = '';
+    }, 1000); // Typing lasts 1 second
+  }, 300); // 300ms pause before typing
+}
